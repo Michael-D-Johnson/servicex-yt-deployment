@@ -26,5 +26,5 @@ python3 post.py <servicex port> yt.item.json
 
 ```
 cd tests
-python3 frontend_tests.py <minio_host:minio_port>
+python3 frontend_test.py <minio_host:minio_port>
 ```
