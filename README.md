@@ -10,6 +10,9 @@ minikube start
 ```
 
 ## Step 3: Install ServiceX
+First update the adminEmail in servicex/values.yaml file.
+
+Once that is done type the following command to install ServiceX.
 ```
 helm install servicex servicex/
 ```
@@ -19,12 +22,18 @@ helm install servicex servicex/
 ### Using json file and post to ServiceX /transformation endpoint
 ```
 cd tests
-python3 post.py <servicex port> yt.item.json
+python3 post.py <servicex_port> yt.item.json
 ```
 
 ### Here is an example using the [ServiceX frontend](https://github.com/ssl-hep/ServiceX_frontend):
 
 ```
-cd tests
+cd tests/ServiceX_frontend
 python3 frontend_test.py <minio_host:minio_port>
 ```
+
+
+## Considerations
+
+### Minio settings
+This setup doesn't use a persistent volume and requests 1Gi in memory. You may need to change that.
