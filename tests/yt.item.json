@@ -1,0 +1,8 @@
+{
+	"did": "girder://579fb0aa7b6f0800011ea3b6#item",
+    "selection": "ZGVmIHRyYW5zZm9ybV95dChkcyk6CiAgICBzbGMgPSBkcy5yW2RzLmRvbWFpbl9jZW50ZXJbMF0sIDosIDpdLnBsb3QoKCJnYXMiLCAiZGVuc2l0eSIpKQogICAgc2FjID0gc2xjLmZyYlsoImdhcyIsICJkZW5zaXR5IildLmQKICAgIHJldHVybiBzYWMK",
+	"result-destination": "object-store",
+	"result-format": "parquet",
+	"chunk-size": 7000,
+	"workers": 1
+}	
