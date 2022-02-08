@@ -10,9 +10,15 @@ minikube start
 ```
 
 ## Step 3: Install ServiceX
-First update the adminEmail in servicex/values.yaml file.
+### First update the adminEmail in servicex/values.yaml file.
 
-Once that is done type the following command to install ServiceX.
+### Update helm dependencies
+```
+cd servicex
+helm dependency update
+```
+
+### Install ServiceX
 ```
 helm install servicex servicex/
 ```
