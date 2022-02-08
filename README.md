@@ -32,7 +32,7 @@ python3 post.py <servicex_port> yt.item.json
 ```
 
 ### Here is an example using the [ServiceX frontend](https://github.com/ssl-hep/ServiceX_frontend):
-#### a) update ServiceX host in tests/ServiceX_frontend/config_default.yaml
+#### a) update ServiceX host in the api_endpoints section of tests/ServiceX_frontend/config_default.yaml
 #### b) run frontend_test.py code
 ```
 cd tests/ServiceX_frontend
