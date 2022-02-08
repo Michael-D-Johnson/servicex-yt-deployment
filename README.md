@@ -1,9 +1,8 @@
 This was tested on a Macbook using [minikube](https://minikube.sigs.k8s.io/docs/start/). The ServiceX yaml is a modified from the [ServiceX](https://github.com/ssl-hep/ServiceX/tree/develop/servicex) repository.
 
 ## Step 1: Install minikube
-```
-brew install minikube
-```
+
+See minikube documentation on installation instructions for your particular machine.
 
 ## Step 2: Start minikube
 ```
@@ -17,7 +16,7 @@ helm install servicex servicex/
 
 ## Step 4: Test Girder DID Finder -> Python Code Gen -> yt transformer 
 
-### Using json file and post to 
+### Using json file and post to ServiceX /transformation endpoint
 ```
 cd tests
 python3 post.py <servicex port> yt.item.json
