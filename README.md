@@ -10,15 +10,15 @@ minikube start
 ```
 
 ## Step 3: Install ServiceX
-### First update the adminEmail in servicex/values.yaml file.
+### a) Update the adminEmail in servicex/values.yaml file.
 
-### Update helm dependencies
+### b) Update helm dependencies
 ```
 cd servicex
 helm dependency update
 ```
 
-### Install ServiceX
+### c) Install ServiceX
 ```
 helm install servicex servicex/
 ```
@@ -32,7 +32,8 @@ python3 post.py <servicex_port> yt.item.json
 ```
 
 ### Here is an example using the [ServiceX frontend](https://github.com/ssl-hep/ServiceX_frontend):
-
+#### a) update ServiceX host in tests/ServiceX_frontend/config_default.yaml
+#### b) run frontend_test.py code
 ```
 cd tests/ServiceX_frontend
 python3 frontend_test.py <minio_host:minio_port>
