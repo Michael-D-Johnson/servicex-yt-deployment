@@ -162,6 +162,9 @@ data:
     {{- if and (not $defaultScheme) .Values.didFinder.CERNOpenData.enabled }}
     {{- $defaultScheme = "cernopendata" }}
     {{- end }}
+    {{- if and (not $defaultScheme) .Values.didFinder.girder.enabled }}
+    {{- $defaultScheme = "girder" }}
+    {{- end }}
     DID_FINDER_DEFAULT_SCHEME = '{{ $defaultScheme }}'
     VALID_DID_SCHEMES = [ "{{ join "\",\"" $didFinders }}" ]
 

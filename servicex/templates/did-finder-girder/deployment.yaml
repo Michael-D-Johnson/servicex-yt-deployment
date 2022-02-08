@@ -16,7 +16,7 @@ spec:
       containers:
       - name: {{ .Release.Name }}-did-finder-girder
         image: pondd/servicex-did-finder-girder:{{ .Values.didFinder.girder.tag }}
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         env:
           - name: INSTANCE_NAME
             value: servicex
