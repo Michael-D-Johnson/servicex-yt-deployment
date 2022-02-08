@@ -1,23 +1,31 @@
-Here is an example using the [ServiceX frontend](https://github.com/ssl-hep/ServiceX_frontend):
+This was tested on a Macbook using [minikube](https://minikube.sigs.k8s.io/docs/start/). The ServiceX yaml is a modified from the [ServiceX](https://github.com/ssl-hep/ServiceX/tree/develop/servicex) repository.
+
+## Step 1: Install minikube
+```
+brew install minikube
+```
+
+## Step 2: Start minikube
+```
+minikube start
+```
+
+## Step 3: Install ServiceX
+```
+helm install servicex servicex/
+```
+
+## Step 4: Test Girder DID Finder -> Python Code Gen -> yt transformer 
+
+### Using json file and post to 
+```
+cd tests
+python3 post.py <servicex port> yt.item.json
+```
+
+### Here is an example using the [ServiceX frontend](https://github.com/ssl-hep/ServiceX_frontend):
 
 ```
-from servicex import ServiceXDataset
-from servicex.servicex_python_function import ServiceXPythonFunction
-from servicex import MinioAdaptor
-
-def transform_yt(ds):
-    slc = ds.r[ds.domain_center[0], :, :].plot(("gas", "density"))
-    sac = slc.frb[("gas", "density")].d
-    return sac
-
-if __name__ == "__main__":
-    dataset = "girder://579fb0aa7b6f0800011ea3b6#item"
-    
-    ds = ServiceXDataset(dataset, 
-                         backend_name = "python",
-                         minio_adaptor = MinioAdaptor('localhost:{your Minio port}))
-    selection = ServiceXPythonFunction(ds)
-    encoded_selection = selection._encode_function(transform_yt)
-    r = ds.get_data_pandas_df(encoded_selection)
-    print(r)
+cd tests
+python3 frontend_tests.py <minio_host:minio_port>
 ```
