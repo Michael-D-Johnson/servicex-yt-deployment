@@ -108,7 +108,7 @@ codeGen:
   # image: sslhep/servicex_code_gen_func_adl_uproot
   # for CMS Run 1 AOD OpenData
   # image: sslhep/servicex_code_gen_cms_aod
-  tag: main
+  tag: sidecar # main
   pullPolicy: Always
 
 # Pull policy for the worker pods - the image and version are specified as
